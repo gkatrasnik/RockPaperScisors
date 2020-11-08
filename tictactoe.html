@@ -1,25 +1,59 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Page Title</title>
+  <title>Rock, Paper, Scisors</title>
   <meta charset="UTF-8"/>
 </head>
 <body>
  <script>
-    // Your JavaScript goes here!
-   function computerPlay() {
-     // random computer pick, console.log
-      const pick = ["rock", "paper", "scisors"];
 
-      const random = Math.floor(Math.random() * pick.length);
-      console.log(pick[random]);
+    // Your JavaScript goes here!
+
+   function computerPlay() {
+     // random computer pick
+      const compPick = ["rock", "paper", "scisors"];
+
+      const random = Math.floor(Math.random() * compPick.length);
+      return(compPick[random]);
     }
 
-   function playRound(playerSelection,computerSelection){
+    // player inputs pick, returns lowercase player pick
+    function playerSelection() {
+      let playerPick = prompt("Chose your weapon: Rock, Paper, Scisors");
+      playerPick = playerPick.toLowerCase();
+      return(playerPick);
+    }
 
-   }
-
+    // round of play. compares computerPlay vs playerSelection. returns winner. 
+    function playRound(playerSelection,computerPlay) {
+      ps = playerSelection();
+      cp = computerPlay();
+      winner =" ";
   
+
+      if (ps=="rock" && cp=="scisors") {
+        winner ="Player";
+        return (winner + " wins");
+      } else if (ps=="paper" && cp=="scisors") {
+          winner ="Computer";
+          return (winner + " wins");
+      } else if (ps=="paper" && cp=="rock") {
+          winner ="Player";
+          return (winner + " wins");
+      } else if (ps=="scisors" && cp=="rock") {
+          winner ="Computer";
+          return (winner + " wins");
+      } else if (ps=="rock" && cp=="paper") {
+          winner ="Computer";
+          return (winner + " wins");
+      } else if (ps=="scisors" && cp=="paper") {
+          winner ="Player";
+          return (winner + " wins");
+      } else {
+          return "Its a tie!"
+      }
+      
+    }  
   </script>
 </body>
 </html>
