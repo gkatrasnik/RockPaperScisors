@@ -9,6 +9,7 @@
 
     // Your JavaScript goes here!
 
+    
    function computerPlay() {
      // random computer pick
       const compPick = ["rock", "paper", "scisors"];
@@ -28,32 +29,65 @@
     function playRound(playerSelection,computerPlay) {
       ps = playerSelection();
       cp = computerPlay();
-      winner =" ";
-  
+       
 
       if (ps=="rock" && cp=="scisors") {
         winner ="Player";
-        return (winner + " wins");
+        
       } else if (ps=="paper" && cp=="scisors") {
           winner ="Computer";
-          return (winner + " wins");
+          
       } else if (ps=="paper" && cp=="rock") {
           winner ="Player";
-          return (winner + " wins");
+          
       } else if (ps=="scisors" && cp=="rock") {
           winner ="Computer";
-          return (winner + " wins");
+          
       } else if (ps=="rock" && cp=="paper") {
           winner ="Computer";
-          return (winner + " wins");
+          
       } else if (ps=="scisors" && cp=="paper") {
           winner ="Player";
-          return (winner + " wins");
+          
       } else {
-          return "Its a tie!"
+          winner ="Nobody"
       }
+      return winner;
       
     }  
+
+    function game() {
+
+     let playerScore = 0;
+     let computerScore = 0;
+      for (gameCount =0; gameCount<6; gameCount++){
+        playRound(playerSelection,computerPlay);
+        if (winner==="Player") {
+          playerScore++;
+        } else if (winner==="Computer") {
+          computerScore++;
+        }
+        console.log("Player: " + playerScore + " : " + computerScore + " Computer");
+      }
+
+    
+      if (playerScore>computerScore) {
+        return("Player wins " + playerScore + " : " + computerScore);
+      } else if (playerScore<computerScore) {
+        return("Computer wins " + playerScore + " : " + computerScore);
+      } else {
+        return("It's a tie! " + playerScore + " : " + computerScore);
+      }
+
+    playerScore = 0;
+    computerScore = 0;
+    
+
+    }
+
+    
+
+
   </script>
 </body>
 </html>
