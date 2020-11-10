@@ -20,8 +20,16 @@
 
     // player inputs pick, returns lowercase player pick
     function playerSelection() {
-      let playerPick = prompt("Chose your weapon: Rock, Paper, Scisors");
+      let playerPick = "";
+
+      while (true) {        
+      playerPick = prompt("Chose your weapon: Rock, Paper or Scisors");
       playerPick = playerPick.toLowerCase();
+
+        if (playerPick ==="rock" || playerPick ==="paper" || playerPick ==="scisors") {
+          break;
+        }
+      }
       return(playerPick);
     }
 
@@ -67,7 +75,8 @@
           playerScore++;
         } else if (winner==="Computer") {
           computerScore++;
-        }
+        } 
+        console.log(" - " + winner + " wins this round");
         console.log("Player: " + playerScore + " : " + computerScore + " Computer");
       }
 
