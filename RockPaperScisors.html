@@ -9,23 +9,25 @@
 
     // Your JavaScript goes here!
 
-    
-   function computerPlay() {
+    //global variables 
+    var playerPick = "";
+    var finalCompPick = "";
+
+    function computerPlay() {
      // random computer pick
       const compPick = ["rock", "paper", "scisors"];
 
       const random = Math.floor(Math.random() * compPick.length);
-      return(compPick[random]);
+      finalCompPick = (compPick[random]);
+      return finalCompPick;
     }
 
     // player inputs pick, returns lowercase player pick
-    function playerSelection() {
-      let playerPick = "";
+    function playerSelection() {      
 
       while (true) {        
-      playerPick = prompt("Chose your weapon: Rock, Paper or Scisors");
-      playerPick = playerPick.toLowerCase();
-
+        playerPick = prompt("Chose your weapon: Rock, Paper or Scisors");
+        playerPick = playerPick.toLowerCase();
         if (playerPick ==="rock" || playerPick ==="paper" || playerPick ==="scisors") {
           break;
         }
@@ -33,11 +35,10 @@
       return(playerPick);
     }
 
-    // round of play. compares computerPlay vs playerSelection. returns winner. 
+    // Plays a round - compares computerPlay vs playerSelection. returns winner. 
     function playRound() {
       ps = playerSelection();
-      cp = computerPlay();
-       
+      cp = computerPlay();       
 
       if (ps=="rock" && cp=="scisors") {
         winner ="Player";
@@ -66,8 +67,8 @@
 
     function game() {
 
-     let playerScore = 0;
-     let computerScore = 0;
+      let playerScore = 0;
+      let computerScore = 0;
      
       for (gameCount =0; gameCount<5; gameCount++) {
         playRound();
@@ -76,8 +77,8 @@
         } else if (winner==="Computer") {
           computerScore++;
         } 
-        console.log(" - " + winner + " wins this round");
-        console.log("Player: " + playerScore + " : " + computerScore + " Computer");
+        console.log(playerPick + " : " + finalCompPick + " | "+ winner + " wins this round");
+        console.log("Player " + playerScore + " : " + computerScore + " Computer");
       }
 
     
@@ -89,6 +90,7 @@
         return("It's a tie! " + playerScore + " : " + computerScore);
       }
 
+      // reset scores, useful when playing in console.
       playerScore = 0;
       computerScore = 0;
     
