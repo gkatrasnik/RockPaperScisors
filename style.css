@@ -15,13 +15,17 @@ body {
 .flex-item {    
     margin: 1em;
     align-self: center;
+    margin-top: auto;
   }
 
 
 .img-center {
     width: 90px ;
     height: auto;
+}
 
+#scisorsBox {
+    margin-top: 0.3em;
 }
 
 .flex-item:hover {
