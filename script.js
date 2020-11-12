@@ -14,10 +14,10 @@
     console.log("Playerpick:",playerPick);
 
     // ko ti klikneš, se mora zagnat tud computerPlay funkcija, da računalnik zbere... 
-    let computerPick = computerPlay()
+    let computerPick = computerPlay();
 
     // ko imaš obe spremenljivki (računalnikova izbira + tvoja, rabiš da se zažene primerjava)
-    let whoWon = playRound(playerPick, computerPick)
+    let whoWon = playRound(playerPick, computerPick);
     document.getElementById("winner").textContent =  whoWon + " wins this round!";
 
     if (whoWon === "Player") {
@@ -43,9 +43,9 @@
 
   function gameEnd() {
     if (userScore>compScore){
-      alert("Player Won " + userScore + " : " + compScore);
+      document.getElementById("winner").textContent = "Player Won " + userScore + " : " + compScore;
     } else if (userScore<compScore){      
-      alert("Computer Won " + userScore + " : " + compScore);
+      document.getElementById("winner").textContent = "Computer Won " + userScore + " : " + compScore;
     }
     userScore =0;
     compScore = 0;
@@ -94,45 +94,9 @@
         winner ="Player";
         
     } else {
-        winner ="Nobody"
-    }
-    
-    return winner;
-    
+        winner ="Nobody";
+    }    
+    return winner;    
   }
   
   
-  
-/*
-  function game() {
-
-    let playerScore = 0;
-    let computerScore = 0;
-   
-    for (gameCount =0; gameCount<5; gameCount++) {
-      playRound();
-      if (winner==="Player") {
-        playerScore++;
-      } else if (winner==="Computer") {
-        computerScore++;
-      } 
-      console.log(playerPick + " : " + finalCompPick + " | "+ winner + " wins this round");
-      console.log("Player " + playerScore + " : " + computerScore + " Computer");
-    }
-
-  
-    if (playerScore>computerScore) {
-      return("Player wins " + playerScore + " : " + computerScore);
-    } else if (playerScore<computerScore) {
-      return("Computer wins " + playerScore + " : " + computerScore);
-    } else {
-      return("It's a tie! " + playerScore + " : " + computerScore);
-    }
-
-    // reset scores, useful when playing in console.
-    playerScore = 0;
-    computerScore = 0;
-  
-
-  } 
-*/   
