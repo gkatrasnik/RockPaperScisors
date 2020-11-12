@@ -1,7 +1,5 @@
 
 
-//console.log("Dsadsa");
-
     //global variables 
     var playerPick = "";
     var finalCompPick = "";
