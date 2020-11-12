@@ -18,7 +18,7 @@
 
     // ko imaš obe spremenljivki (računalnikova izbira + tvoja, rabiš da se zažene primerjava)
     let whoWon = playRound(playerPick, computerPick)
-    document.getElementById("winner").textContent = whoWon;
+    document.getElementById("winner").textContent =  whoWon + " wins this round!";
 
     if (whoWon === "Player") {
       userScore += 1;
@@ -30,7 +30,7 @@
 
     updateScore();
 
-    if (userScore <= 5 || compScore >= 5) {
+    if (userScore >= 5 || compScore >= 5) {
       gameEnd();
     };
 
