@@ -1,4 +1,25 @@
+
+body {
+    margin-top: 10%;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Sofia';font-size: 40px;
+    
+}
+
 .container {
     display: flex;
     justify-content: center;
+}
+
+.flex-item {    
+    margin: 1em;
+    align-self: center;
+  }
+
+
+.img-center {
+    width: 90px ;
+    height: auto;
+
 }

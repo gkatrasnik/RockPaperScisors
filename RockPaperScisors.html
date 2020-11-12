@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
   <link rel="stylesheet" href="style.css">
   <title>Rock, Paper, Scisors</title>
   <meta charset="UTF-8"/>
@@ -12,10 +13,16 @@
     <p>:</p>
     <p id="compScore">0</p>
   </div>
-  <div class="container">
-    <button id="rock">Rock</button>
-    <button id="paper">Paper</button>
-    <button id="scisors">Scisors</button>
+  <div id="buttonContainer" class="container">
+    <div class="flex-item">
+      <img id ="rock" class="img-center" src="rock.png" />
+    </div>
+    <div class="flex-item">
+      <img id="paper" class="img-center" src="paper.png" />
+    </div>
+    <div class="flex-item">
+      <img id="scisors" class="img-center" src="scisors.png" />
+    </div>
   </div>
  <script src="script.js"></script>
 </body>
